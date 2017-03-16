@@ -19,9 +19,7 @@ RUN mkdir -p /opt/fusionreactor
 ADD https://intergral-dl.s3.amazonaws.com/FR/Latest/fusionreactor.jar /opt/fusionreactor/fusionreactor.jar
 ADD https://intergral-dl.s3.amazonaws.com/FR/Latest/libfrjvmti_x64.so /opt/fusionreactor/libfrjvmti_x64.so
 
-ENV FR_NAME="FusionReactor"
-ENV FR_PORT="8088"
+ENV LUCEE_JAVA_OPTS="-javaagent:/opt/fusionreactor/fusionreactor.jar=name=lucee-fr,address=8088 -agentpath:/opt/fusionreactor/libfrjvmti_x64.so"
 
-EXPOSE $FR_PORT
+EXPOSE 8088
 
-ENV LUCEE_JAVA_OPTS="$LUCEE_JAVA_OPTS -javaagent:/opt/fusionreactor/fusionreactor.jar=name=${FR_NAME},address=${FR_PORT} -agentpath:/opt/fusionreactor/libfrjvmti_x64.so"
