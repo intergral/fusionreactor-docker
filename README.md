@@ -7,7 +7,7 @@ This repository contains some basic examples of using FusionReactor within vario
 
 If you have any examples you think would improve this repository please submit a pull request.
 
-Alternatively if you have any request for example please contact us as [FusionReactor Support](mailto:support@fusion-reactor.com)
+Alternatively if you have any request for example please contact us as at FusionReactor Support.
 
 # License
 
