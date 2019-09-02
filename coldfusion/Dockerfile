@@ -19,7 +19,16 @@ RUN mkdir -p -m 777 /opt/fusionreactor
 COPY fusionreactor.jar /opt/fusionreactor/fusionreactor.jar
 COPY libfrjvmti_x64.so /opt/fusionreactor/libfrjvmti_x64.so
 
-#edit CF's jvm.config file to append FR args to the java.args line
-RUN sed -i -e '/^java.args=/ s+$+ -javaagent:/opt/fusionreactor/fusionreactor.jar=name=cf-fr,address=8088 -agentpath:/opt/fusionreactor/libfrjvmti_x64.so -Dfradminpassword=123 +' /opt/coldfusion/cfusion/bin/jvm.config
+ENV fr_name="cf-fr" \
+fr_port="8088" \
+fr_license="123" \
+fr_password="123" \
+fr_options="-Dfr.cloud.group=test1"
 
-EXPOSE 8088
+RUN sed -i -e '/^java.args=/ s+$+ -javaagent:/opt/fusionreactor/fusionreactor.jar=name='"$fr_name"',address='"$fr_port"' \
+-agentpath:/opt/fusionreactor/libfrjvmti_x64.so \
+-Dfradminpassword='"$fr_password"' \
+-Dfrlicense='"$fr_license"' \
+'"$fr_options"' +' /opt/coldfusion/cfusion/bin/jvm.config
+
+EXPOSE $fr_port
