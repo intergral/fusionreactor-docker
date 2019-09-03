@@ -15,7 +15,7 @@ As for modifying the jvm args, while ColdFusion is based indeed on Apache Tomcat
 
 The Dockerfile supplied sets several variables in the image during the build.  These cannot be overridden during the startup.  All options are supplied with defaults.
 
-* `FRNAME` - default `cf-fr` - the name of the FR instance.
+* `FR_NAME` - default `cf-fr` - the name of the FR instance.
 * `FR_PORT` - default `8088` - the port on which FR listens.  This must be opened using the docker `-p` directive (see examples below).
 * `FR_LICENSE` - default `changeme` - your FR license key.  This is defaulted but you must use your own key since the supplied default won't verify correctly when FR starts.
 * `FR_PASSWORD` - default `changeme` - your FR admin password.  You *must* change this.
