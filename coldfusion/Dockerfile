@@ -16,8 +16,8 @@ FROM eaps-docker-coldfusion.bintray.io/cf/coldfusion:latest
 
 RUN mkdir -p -m 777 /opt/fusionreactor
 
-COPY fusionreactor.jar /opt/fusionreactor/fusionreactor.jar
-COPY libfrjvmti_x64.so /opt/fusionreactor/libfrjvmti_x64.so
+ADD https://intergral-dl.s3.amazonaws.com/FR/Latest/fusionreactor.jar /opt/fusionreactor/fusionreactor.jar
+ADD https://intergral-dl.s3.amazonaws.com/FR/Latest/libfrjvmti_x64.so /opt/fusionreactor/libfrjvmti_x64.so
 
 ENV fr_name="cf-fr" \
 fr_port="8088" \
