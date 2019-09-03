@@ -19,16 +19,18 @@ RUN mkdir -p -m 777 /opt/fusionreactor
 ADD https://intergral-dl.s3.amazonaws.com/FR/Latest/fusionreactor.jar /opt/fusionreactor/fusionreactor.jar
 ADD https://intergral-dl.s3.amazonaws.com/FR/Latest/libfrjvmti_x64.so /opt/fusionreactor/libfrjvmti_x64.so
 
-ENV fr_name="cf-fr" \
-fr_port="8088" \
-fr_license="123" \
-fr_password="123" \
-fr_options="-Dfr.cloud.group=test1"
+RUN chown -R cfuser:cfuser /opt/fusionreactor
 
-RUN sed -i -e '/^java.args=/ s+$+ -javaagent:/opt/fusionreactor/fusionreactor.jar=name='"$fr_name"',address='"$fr_port"' \
+ARG FR_NAME=cf-fr
+ARG FR_PORT=8088
+ARG FR_LICENSE=change_me_in_your_dockerfile
+ARG FR_PASSWORD=changeme
+ARG FR_OPTIONS="-Dfr.cloud.group=test1"
+
+RUN sed -i -e '/^java.args=/ s+$+ -javaagent:/opt/fusionreactor/fusionreactor.jar=name='"$FR_NAME"',address='"$FR_PORT"' \
 -agentpath:/opt/fusionreactor/libfrjvmti_x64.so \
--Dfradminpassword='"$fr_password"' \
--Dfrlicense='"$fr_license"' \
-'"$fr_options"' +' /opt/coldfusion/cfusion/bin/jvm.config
+-Dfradminpassword='"$FR_PASSWORD"' \
+-Dfrlicense='"$FR_LICENSE"' \
+'"$FR_OPTIONS"' +' /opt/coldfusion/cfusion/bin/jvm.config
 
 EXPOSE $fr_port
