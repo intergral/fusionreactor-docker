@@ -3,6 +3,18 @@ Examples of using [FusionReactor](https://www.fusion-reactor.com) inside docker 
 
 This repository contains some basic examples of using FusionReactor within various docker environments.
 
+# Additional resources
+
+Here are additional resources on using FusionReactor with Docker:
+- [Using FusionReactor in Docker](https://intergral.atlassian.net/wiki/spaces/FR82/pages/245546923/Using+FusionReactor+in+Docker)
+- [FusionReactor for Docker Swarm (Part 1, Installation)](https://www.fusion-reactor.com/blog/fusionreactor-for-docker-swarm/)
+- [FusionReactor for Docker Swarm (Part 2, Alerting)](https://blog.mattclemente.com/2019/01/04/configuring-fusionreactor-cloud-alerts.html)
+- [Screencast Intro to FusionReactor Cloud & Docker Swarm Demo – Brad Wood](https://www.fusion-reactor.com/news/screencast-intro-to-fusionreactor-cloud-docker-swarm-demo-brad-wood/)
+- [Retaining FusionReactor logs in Docker Environment](https://www.fusion-reactor.com/support/kb/frs-441/)
+- How [FusionReactor 8.1.0](https://www.fusion-reactor.com/news/whats-new-in-fusionreactor-8-1-0/) Enterprise Dashboard will automatically detect and connect to Docker containers, with FusionReactor Enterprise or Ultimate
+- How to [Remote debug docker containers](https://www.fusion-reactor.com/production-debugger-3/remote-debug-docker-container/), with FusionReactor Ultimate
+
+
 # Contributing
 
 If you have any examples you think would improve this repository please submit a pull request.
