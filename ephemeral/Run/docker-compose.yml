@@ -1,0 +1,21 @@
+version: '3'
+services:
+    fram:
+      image: fram
+      container_name: fram
+      ports:
+        - "8187:8087"
+      environment:
+        - LICENSE=YOUR_LICENSE_HERE
+        - PASS=admin1
+    tomcat:
+      image: edtomcat
+      depends_on:
+        - fram
+      environment:
+        - LICENSE=YOUR_LICENSE_HERE
+        - PASS=admin2
+        - TARGET=fram
+        - GROUPS=production,tomcats
+      deploy:
+        replicas: 5
