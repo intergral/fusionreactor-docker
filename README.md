@@ -6,11 +6,11 @@ in docker environments.
 This repository contains examples for :
 
   * [ColdFusion](coldfusion/README.md)
+  * [Commandbox](commandbox/README.md)
   * [Enterprise Dashboard](ephemeral/README.md)
   * [Jetty](jetty/README.md)
   * [Lucee](lucee/README.md)
   * [Tomcat](tomcat/README.md)
-  * [Commandbox](Commandbox/README.md)
 
 # Contributing
 
