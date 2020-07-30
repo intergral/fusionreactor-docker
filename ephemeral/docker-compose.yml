@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+    # Run a framd instance listening for ED connection
     fram:
       image: fram
       container_name: fram
@@ -10,6 +11,7 @@ services:
         - LICENSE
         - PASS
 
+    # Run a tomcat which will connect to the above fram
     tomcat:
       image: edtomcat
       depends_on:
