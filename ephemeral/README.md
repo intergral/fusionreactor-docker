@@ -1,23 +1,51 @@
 To build the FRAM and Tomcat images run:
 
-	For Tomcat:
-	Navigate into Tomcat
-	Run docker build -t edtomcat .
+## Build
 
-	For FRAM
-	Navigate into FRAM
-	Run docker build -t fram .
+### Tomcat:
 
-To run the Ephemeral network with docker-compose
-	Navigate into Run
-	Run docker-compose up
+Inside the Tomcat directory run :
 
-	If you want to run multiple tomcat instances:
-	Run docker-compose up --scale tomcat={number}
+```bash
+docker build -t edtomcat .
+```
 
-Environment properties:
-LICENSE - Your license key
-PASS - The password you would like for the instance
-TARGET (Tomcat only) - The target for the FRAM instance to register to
-GROUPS (Tomcat only) - The groups you want the instances to register to
+### FRAM
 
+Inside the FRAM directory run :
+
+```bash
+docker build -t fram .
+```
+
+## Configure
+
+You need to configure the ```.env``` file.
+
+This contains your license key and password for the instances.
+
+You should set the following properties
+  * LICENSE
+  * PASS
+
+## Running
+
+To run the test setup run :
+
+```bash
+docker-compose up
+```
+
+If you want to run more tomcat instances:
+
+```
+docker-compose up --scale tomcat=4
+```
+
+where tomcat= is the defines the number of instances you want.
+
+## Viewing
+
+Open the following link in your browser :
+
+ * [Enterprise Dashboard](http://localhost:8187/fusionreactor/findex.htm?p=ed&__toc=enterprise)

@@ -1,4 +1,5 @@
 version: '3'
+
 services:
     fram:
       image: fram
@@ -6,16 +7,18 @@ services:
       ports:
         - "8187:8087"
       environment:
-        - LICENSE=YOUR_LICENSE_HERE
-        - PASS=admin1
+        - LICENSE
+        - PASS
+
     tomcat:
       image: edtomcat
       depends_on:
         - fram
+      ports:
+        - 8080
+        - 8088
       environment:
-        - LICENSE=YOUR_LICENSE_HERE
-        - PASS=admin2
         - TARGET=fram
-        - GROUPS=production,tomcats
-      deploy:
-        replicas: 5
+        - GROUPS=production,tomcat
+        - LICENSE
+        - PASS=

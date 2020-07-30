@@ -1,4 +1,4 @@
-# Copyright 2017 Intergral GmbH
+# Copyright 2020 Intergral GmbH
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,4 +22,3 @@ ADD https://intergral-dl.s3.amazonaws.com/FR/Latest/libfrjvmti_x64.so /opt/fusio
 ENV JAVA_OPTS="-javaagent:/opt/fusionreactor/fusionreactor.jar=name=tomcat-fr,address=8088 -agentpath:/opt/fusionreactor/libfrjvmti_x64.so"
 
 EXPOSE 8088
-
