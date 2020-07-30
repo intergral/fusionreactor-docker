@@ -1,13 +1,21 @@
 # fusionreactor-docker
-Examples of using [FusionReactor](https://www.fusion-reactor.com) inside docker environments.
 
-This repository contains some basic examples of using FusionReactor within various docker environments.
+This repository contains examples of how to run [FusionReactor](https://www.fusion-reactor.com) agent
+in docker environments.
+
+This repository contains examples for :
+
+  * [ColdFusion](coldfusion/README.md)
+  * [Enterprise Dashboard](ephemeral/README.md)
+  * [Jetty](jetty/README.md)
+  * [Lucee](lucee/README.md)
+  * [Tomcat](tomcat/README.md)
 
 # Contributing
 
 If you have any examples you think would improve this repository please submit a pull request.
 
-Alternatively if you have any request for example please contact us as at FusionReactor Support.
+Alternatively if you have any request for example please contact us as at [FusionReactor Support](mailto:support@fusion-reactor.com).
 
 # License
 
