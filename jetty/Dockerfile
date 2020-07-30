@@ -14,12 +14,16 @@
 
 FROM jetty:9
 
+USER root
+
 RUN mkdir -p /opt/fusionreactor
 
 ADD https://intergral-dl.s3.amazonaws.com/FR/Latest/fusionreactor.jar /opt/fusionreactor/fusionreactor.jar
 ADD https://intergral-dl.s3.amazonaws.com/FR/Latest/libfrjvmti_x64.so /opt/fusionreactor/libfrjvmti_x64.so
 
 RUN chown -R jetty:jetty /opt/fusionreactor
+
+USER jetty
 
 ENV JAVA_OPTIONS="-javaagent:/opt/fusionreactor/fusionreactor.jar=name=jetty-fr,address=8088 -agentpath:/opt/fusionreactor/libfrjvmti_x64.so"
 
