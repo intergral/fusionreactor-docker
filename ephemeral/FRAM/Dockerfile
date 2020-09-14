@@ -16,7 +16,7 @@ FROM openjdk:13
 
 RUN mkdir -p /opt/fusionreactor/instance/FRAM
 
-ADD https://intergral-dl.s3.amazonaws.com/FR/Latest/fusionreactor.jar /opt/fusionreactor/instance/FRAM/fusionreactor.jar
+ADD https://download.fusionreactor.io/FR/Latest/fusionreactor.jar /opt/fusionreactor/instance/FRAM/fusionreactor.jar
 
 ADD fram.sh /opt/fusionreactor/fram.sh
 

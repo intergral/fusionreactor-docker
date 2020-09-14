@@ -16,8 +16,8 @@ FROM tomcat
 
 RUN mkdir -p /opt/fusionreactor/instance/tomcat
 
-ADD https://intergral-dl.s3.amazonaws.com/FR/Latest/fusionreactor.jar /opt/fusionreactor/instance/tomcat
-ADD https://intergral-dl.s3.amazonaws.com/FR/Latest/libfrjvmti_x64.so /opt/fusionreactor/instance/tomcat
+ADD https://download.fusionreactor.io/FR/Latest/fusionreactor.jar /opt/fusionreactor/instance/tomcat
+ADD https://download.fusionreactor.io/FR/Latest/libfrjvmti_x64.so /opt/fusionreactor/instance/tomcat
 
 ADD runTomcat.sh /opt
 RUN chmod +x /opt/runTomcat.sh
